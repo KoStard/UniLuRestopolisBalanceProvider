@@ -1,3 +1,5 @@
+# Description: A simple Telegram bot that sends the Restopolis balance at 8pm CET every day
+
 import os
 import time
 from telegram import Update

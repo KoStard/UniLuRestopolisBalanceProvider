@@ -1,6 +1,6 @@
 # Restopolis Balance Checker
 
-Restopolis Balance Checker is a small Python script that retrieves the balance of your Restopolis card from the University of Luxembourg's student portal. 
+Restopolis Balance Checker is a small Python script that retrieves the balance of your Restopolis card from the University of Luxembourg's student portal. It also includes a simple Telegram bot that sends the balance to a predefined user ID once every evening.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Restopolis Balance Checker is a small Python script that retrieves the balance o
     pip install -r requirements.txt
     ```
 
-3. Set the environment variables `RESTOPOLIS_USERNAME` and `RESTOPOLIS_PASSWORD` with your Uni.lu credentials.
+3. Set the environment variables `RESTOPOLIS_USERNAME`, `RESTOPOLIS_PASSWORD`, `TELEGRAM_API_KEY`, and `PREDEFINED_CHAT_ID` with your Uni.lu credentials and Telegram bot information. In the beginning, you won't know the `PREDEFINED_CHAT_ID`, so just start the bot, call the `/start` command, and then check the console output for the `chat_id` value.
 
 ## Usage
 
@@ -21,11 +21,17 @@ To use the script, run the following command in your terminal:
 python restopolis_balance_provider.py
 ```
 
-This will print the balance of your Restopolis card to the console.
+This will print the balance of your Restopolis card to the console. To use the Telegram bot, run the following command in your terminal:
+
+```
+python simple_telegram_bot.py
+```
+
+This will start the bot and send the balance of your Restopolis card to the specified Telegram user once every evening after getting the /start command from the right user.
 
 ## Troubleshooting
 
-If you encounter any issues while running the script, make sure that your Uni.lu username and password are correct and that the environment variables `RESTOPOLIS_USERNAME` and `RESTOPOLIS_PASSWORD` are set correctly. If the issue persists, please submit a bug report in the Issues section of this repository.
+If you encounter any issues while running the script or the bot, make sure that your Uni.lu username and password and Telegram bot credentials are correct and that the environment variables are set correctly. If the issue persists, please submit a bug report in the Issues section of this repository.
 
 ## Development
 
