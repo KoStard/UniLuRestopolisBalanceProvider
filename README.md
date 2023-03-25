@@ -49,6 +49,19 @@ To tidy the dependencies from the virtual environment before freezing the requir
 pip-autoremove --freeze > requirements.txt
 ```
 
+## Notes from learning
+
+### How to understand what authentication is required for a website?
+1. Open the website in your browser
+2. Open the developer tools (F12)
+3. Go to the network tab
+4. Reload the page
+5. Look for the request that is sent to the server when you log in. But in this case, I couldn't find it. After some discussions with ChatGPT, describing what I see when the login happens (the username and password is asked with a chrome native popup, not with a web page), I found this header from the response with 401 status code:
+    ```
+    WWW-Authenticate: NTLM
+    ```
+6. After this, it was just about finding the right library to use. I found this library (requests-ntlm), which let me log into it.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
